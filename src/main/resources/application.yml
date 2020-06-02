@@ -1,0 +1,21 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: KafkaApp
+  kafka:
+    listener:
+      concurrency: 10    # 设置消费的线程数
+      poll-timeout: 1500 # 自动提交设置，如果消息队列中没有消息，等待timeout毫秒后，调用poll()方法。如果队列中有消息，立即消费消息，每次消费的消息的多少可以通过max.poll.records配置。
+    template:
+      default-topic: test
+    producer:
+      bootstrap-servers: localhost:9092
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group-0
+      enable-auto-commit: true
+      auto-offset-reset: latest
+    properties:
+      sasl.mechanism: PLAIN
+      security.protocol: SASL_PLAINTEXT
