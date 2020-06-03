@@ -3,9 +3,6 @@ package com.fengxuechao.examples;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.io.File;
-import java.util.Arrays;
-
 /**
  * 这是一个Kafka的学习笔记
  * <ul>
